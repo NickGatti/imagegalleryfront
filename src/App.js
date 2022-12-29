@@ -1,14 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+import { FileUploadPage } from './Components/ImageUpload';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <form method="post" enctype="multipart/form-data" action="/upload">
-          <input type="file" name="file" />
-          <input type="submit" value="Submit" />
-        </form>
+        <FileUploadPage />
       </header>
     </div>
   );
