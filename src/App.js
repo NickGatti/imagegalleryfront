@@ -6,9 +6,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h1>Hello Foto!</h1>
+      </header>
+      <body>
         <Gallery />
         <ImageUpload />
-      </header>
+      </body>
     </div>
   );
 }
