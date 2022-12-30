@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import './css/Gallery.css'
 
 export const Gallery = () => {
     const [galleryImages, setGalleryImages] = useState()
@@ -18,7 +19,7 @@ export const Gallery = () => {
     }, [])
 
     return (
-        <div>
+        <div className="container">
             {galleryImages}
         </div>
     )

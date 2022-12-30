@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 export const ImageUpload = () => {
 	const [selectedFile, setSelectedFile] = useState();
@@ -11,14 +11,14 @@ export const ImageUpload = () => {
 
 	const handleSubmission = () => {
 		const formData = new FormData();
-        formData.append('file', selectedFile)
+		formData.append('file', selectedFile)
 
 		fetch(
 			'http://localhost:3000/upload',
 			{
 				method: 'POST',
 				body: formData,
-                enctype: 'multipart/form-data'
+				enctype: 'multipart/form-data'
 			}
 		)
 			.then((response) => response.json())
@@ -30,8 +30,8 @@ export const ImageUpload = () => {
 			});
 	};
 
-	return(
-        <div>
+	return (
+		<div>
 			<input type="file" name="file" onChange={changeHandler} />
 			{isFilePicked ? (
 				<div>
