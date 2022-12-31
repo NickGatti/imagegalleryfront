@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import './css/ImageUpload.css';
 
-export const ImageUpload = () => {
-	const [selectedFile, setSelectedFile] = useState();
+export const ImageUpload = ({setFileSubmitted}) => {
+	const [selectedFile, setSelectedFile] = useState(null);
 	const [isFilePicked, setIsFilePicked] = useState(false);
+	const [submitDisabled, setSubmitDisabled] = useState(false);
 
 	const changeHandler = (event) => {
 		setSelectedFile(event.target.files[0]);
@@ -12,6 +14,7 @@ export const ImageUpload = () => {
 	const handleSubmission = () => {
 		const formData = new FormData();
 		formData.append('file', selectedFile)
+		setSubmitDisabled(true)
 
 		fetch(
 			'http://localhost:3000/upload',
@@ -24,6 +27,10 @@ export const ImageUpload = () => {
 			.then((response) => response.json())
 			.then((result) => {
 				console.log('Success:', result);
+				setFileSubmitted(true)
+				setIsFilePicked(false)
+				setSelectedFile(null)
+				setSubmitDisabled(false)
 			})
 			.catch((error) => {
 				console.error('Error:', error);
@@ -31,8 +38,8 @@ export const ImageUpload = () => {
 	};
 
 	return (
-		<div>
-			<input type="file" name="file" onChange={changeHandler} />
+		<div className='formContainer'>
+			<input className='fileButton' type="file" name="file" onChange={changeHandler} />
 			{isFilePicked ? (
 				<div>
 					<p>Filename: {selectedFile.name}</p>
@@ -47,7 +54,7 @@ export const ImageUpload = () => {
 				<p>Select a file to show details</p>
 			)}
 			<div>
-				<button onClick={handleSubmission}>Submit</button>
+				<button className='submitButton' disabled={submitDisabled} onClick={handleSubmission}>Submit</button>
 			</div>
 		</div>
 	)

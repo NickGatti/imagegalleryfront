@@ -36,3 +36,13 @@
 .modal > img {
     height: auto;
 }
+
+.mainHeading {
+    font-size: 3em;
+    animation: 2s ease-out shrinkText;
+}
+
+@keyframes shrinkText {
+    from { opacity: 0; font-size: 5em; }
+    to   { opacity: 1; font-size: 3em; }
+  }
