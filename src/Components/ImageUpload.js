@@ -51,7 +51,7 @@ export const ImageUpload = ({setFileSubmitted}) => {
 					</p>
 				</div>
 			) : (
-				<p>Select a file to show details</p>
+				<p>Select a file to show details, only PNG allowed.</p>
 			)}
 			<div>
 				<button className='submitButton' disabled={submitDisabled} onClick={handleSubmission}>Submit</button>
