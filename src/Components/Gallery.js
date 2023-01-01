@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import './css/Gallery.css';
 import { GalleryImageModal } from "./GalleryImageModal";
+import './css/Gallery.css';
 
 export const Gallery = ({fileSubmitted, setFileSubmitted}) => {
     const [galleryImages, setGalleryImages] = useState(null);

@@ -17,7 +17,7 @@ export const ImageUpload = ({setFileSubmitted}) => {
 		setSubmitDisabled(true)
 
 		fetch(
-			'http://ec2-3-143-24-17.us-east-2.compute.amazonaws.com/upload',
+			'/upload',
 			{
 				method: 'POST',
 				body: formData,
