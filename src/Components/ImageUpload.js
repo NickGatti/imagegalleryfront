@@ -17,7 +17,7 @@ export const ImageUpload = ({setFileSubmitted}) => {
 		setSubmitDisabled(true)
 
 		fetch(
-			'http://localhost:3000/upload',
+			'/upload',
 			{
 				method: 'POST',
 				body: formData,
