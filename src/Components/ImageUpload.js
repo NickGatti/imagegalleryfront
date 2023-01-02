@@ -54,7 +54,12 @@ export const ImageUpload = ({setFileSubmitted}) => {
 				<p>Select a file to show details, only PNG allowed.</p>
 			)}
 			<div>
-				<button className='submitButton' disabled={submitDisabled} onClick={handleSubmission}>Submit</button>
+				<button
+					className='submitButton'
+					disabled={submitDisabled}
+					onClick={handleSubmission}
+					style={{ backgroundColor: `${submitDisabled ? 'darkgrey' : 'white'}` }}
+					>Submit</button>
 			</div>
 		</div>
 	)
