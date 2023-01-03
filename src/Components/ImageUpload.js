@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './css/ImageUpload.css';
 
-export const ImageUpload = ({setFileSubmitted}) => {
+export const ImageUpload = ({ setFileSubmitted }) => {
 	const [selectedFile, setSelectedFile] = useState(null);
 	const [isFilePicked, setIsFilePicked] = useState(false);
 	const [submitDisabled, setSubmitDisabled] = useState(false);
@@ -59,7 +59,7 @@ export const ImageUpload = ({setFileSubmitted}) => {
 					disabled={submitDisabled}
 					onClick={handleSubmission}
 					style={{ backgroundColor: `${submitDisabled ? 'darkgrey' : 'white'}` }}
-					>Submit</button>
+				>Submit</button>
 			</div>
 		</div>
 	)

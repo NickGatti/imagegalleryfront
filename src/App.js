@@ -12,8 +12,8 @@ function App() {
         <h1 className='mainHeading'>Hello Foto!</h1>
       </header>
       <body>
-        <Gallery fileSubmitted={fileSubmitted} setFileSubmitted={setFileSubmitted}/>
-        <ImageUpload setFileSubmitted={setFileSubmitted}/>
+        <Gallery fileSubmitted={fileSubmitted} setFileSubmitted={setFileSubmitted} />
+        <ImageUpload setFileSubmitted={setFileSubmitted} />
       </body>
     </div>
   );
