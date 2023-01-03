@@ -13,8 +13,8 @@ export const ImageUpload = ({setFileSubmitted}) => {
 
 	const handleSubmission = () => {
 		const formData = new FormData();
-		formData.append('file', selectedFile)
-		setSubmitDisabled(true)
+		formData.append('file', selectedFile);
+		setSubmitDisabled(true);
 
 		fetch(
 			'/upload',
@@ -26,14 +26,14 @@ export const ImageUpload = ({setFileSubmitted}) => {
 		)
 			.then((response) => response.json())
 			.then((result) => {
-				console.log('Success:', result);
-				setFileSubmitted(true)
-				setIsFilePicked(false)
-				setSelectedFile(null)
-				setSubmitDisabled(false)
+				console.log('Success POST /images:', result);
+				setFileSubmitted(true);
+				setIsFilePicked(false);
+				setSelectedFile(null);
+				setSubmitDisabled(false);
 			})
 			.catch((error) => {
-				console.error('Error:', error);
+				console.error('Error POST /images:', error);
 			});
 	};
 
@@ -63,4 +63,4 @@ export const ImageUpload = ({setFileSubmitted}) => {
 			</div>
 		</div>
 	)
-}
+};

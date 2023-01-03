@@ -13,7 +13,7 @@ export const Gallery = ({fileSubmitted, setFileSubmitted}) => {
         setModalSrcUrl(url);
     };
 
-    const closeModal = event => {
+    const closeModal = () => {
         setModalIsOpen(false);
         setModalSrcUrl(null);
     }
@@ -22,15 +22,14 @@ export const Gallery = ({fileSubmitted, setFileSubmitted}) => {
         fetch('/images').then(res => {
             return res.json();
         }).then(res => {
-            console.log('GET /images Success!', res);
+            console.log('Success GET /images:', res);
             setGalleryImages(res.images.map(({ url }, idx) => {
                 return <img onClick={event => openModal(event, url)} key={idx} src={url} />
             }));
         }).catch(err => {
-            console.log('ERROR on GET /images ERROR:', err);
+            console.log('Error GET /images:', err);
         })
-        setFileSubmitted(false)
-        console.log('ran X many times.')
+        setFileSubmitted(false);
     }, [fileSubmitted]);
 
     return (

@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import './App.css';
 import { Gallery } from './Components/Gallery';
 import { ImageUpload } from './Components/ImageUpload';
+import './App.css';
 
 function App() {
   const [fileSubmitted, setFileSubmitted] = useState(false);

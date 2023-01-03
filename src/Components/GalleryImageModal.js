@@ -1,4 +1,4 @@
-import './css/Gallery.css'
+import './css/Gallery.css';
 
 export const GalleryImageModal = ({ url }) => {
     console.log('url', url)
@@ -7,4 +7,4 @@ export const GalleryImageModal = ({ url }) => {
             <img src={url} />
         </div>
     )
-}
+};
