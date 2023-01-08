@@ -16,9 +16,10 @@ export const Gallery = ({ fileSubmitted, setFileSubmitted }) => {
     const closeModal = () => {
         setModalIsOpen(false);
         setModalSrcUrl(null);
-    }
+    };
 
     useEffect(() => {
+        //I should make a hook for this
         fetch('/images').then(res => {
             return res.json();
         }).then(res => {
@@ -37,5 +38,5 @@ export const Gallery = ({ fileSubmitted, setFileSubmitted }) => {
             {galleryImages}
             {modalOpen ? <GalleryImageModal url={modalSrcUrl} /> : null}
         </div>
-    )
+    );
 };

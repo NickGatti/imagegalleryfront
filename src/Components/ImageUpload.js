@@ -16,6 +16,7 @@ export const ImageUpload = ({ setFileSubmitted }) => {
 		formData.append('file', selectedFile);
 		setSubmitDisabled(true);
 
+		//I should make a hook for this
 		fetch(
 			'/upload',
 			{
@@ -38,6 +39,7 @@ export const ImageUpload = ({ setFileSubmitted }) => {
 	};
 
 	return (
+		//Using the form element is probably a better idea
 		<div className='formContainer'>
 			<input className='fileButton' type="file" name="file" onChange={changeHandler} />
 			{isFilePicked ? (
@@ -62,5 +64,5 @@ export const ImageUpload = ({ setFileSubmitted }) => {
 				>Submit</button>
 			</div>
 		</div>
-	)
+	);
 };
