@@ -7,6 +7,12 @@ export const ImageUpload = ({ setFileSubmitted }) => {
 	const [submitDisabled, setSubmitDisabled] = useState(false);
 
 	const changeHandler = (event) => {
+		if (event.target.files.length === 0) {
+			setSelectedFile(null);
+			setIsFilePicked(false);
+			setSubmitDisabled(true);
+			return
+		}
 		setSelectedFile(event.target.files[0]);
 		setIsFilePicked(true);
 	};
@@ -38,6 +44,13 @@ export const ImageUpload = ({ setFileSubmitted }) => {
 			});
 	};
 
+	const handleDiabledButton = () => {
+		if (isFilePicked || submitDisabled) {
+			return true
+		}
+		return false
+	}
+
 	return (
 		//Using the form element is probably a better idea
 		<div className='formContainer'>
@@ -58,7 +71,7 @@ export const ImageUpload = ({ setFileSubmitted }) => {
 			<div>
 				<button
 					className='submitButton'
-					disabled={submitDisabled}
+					disabled={() => handleDiabledButton()}
 					onClick={handleSubmission}
 					style={{ backgroundColor: `${submitDisabled ? 'darkgrey' : 'white'}` }}
 				>Submit</button>
