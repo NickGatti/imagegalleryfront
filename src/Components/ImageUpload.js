@@ -45,10 +45,17 @@ export const ImageUpload = ({ setFileSubmitted }) => {
 	};
 
 	const handleDiabledButton = () => {
-		if (isFilePicked || submitDisabled) {
+		if (!isFilePicked || submitDisabled) {
 			return true
 		}
 		return false
+	}
+
+	const handleDiabledButtonCss = () => {
+		if (!isFilePicked || submitDisabled) {
+			return 'darkgrey'
+		}
+		return 'white'
 	}
 
 	return (
@@ -73,7 +80,7 @@ export const ImageUpload = ({ setFileSubmitted }) => {
 					className='submitButton'
 					disabled={() => handleDiabledButton()}
 					onClick={handleSubmission}
-					style={{ backgroundColor: `${submitDisabled ? 'darkgrey' : 'white'}` }}
+					style={{ backgroundColor: `${() => handleDiabledButtonCss()}` }}
 				>Submit</button>
 			</div>
 		</div>
