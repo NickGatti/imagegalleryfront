@@ -11,10 +11,10 @@ function App() {
       <header className="App-header">
         <h1 className='mainHeading'>Hello Foto!</h1>
       </header>
-      <body>
+      <div>
         <Gallery fileSubmitted={fileSubmitted} setFileSubmitted={setFileSubmitted} />
         <ImageUpload setFileSubmitted={setFileSubmitted} />
-      </body>
+      </div>
     </div>
   );
 };

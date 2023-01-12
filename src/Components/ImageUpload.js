@@ -78,9 +78,9 @@ export const ImageUpload = ({ setFileSubmitted }) => {
 			<div>
 				<button
 					className='submitButton'
-					disabled={() => handleDiabledButton()}
+					disabled={handleDiabledButton()}
 					onClick={handleSubmission}
-					style={{ backgroundColor: `${() => handleDiabledButtonCss()}` }}
+					style={{ backgroundColor: `${handleDiabledButtonCss()}` }}
 				>Submit</button>
 			</div>
 		</div>
